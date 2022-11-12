@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { SearchMovies } from 'components/SearchMovies/SearchMovies';
-import { Link, useLocation, useSearchParams } from 'react-router-dom';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import { searchMovies } from 'services/api-themoviedb';
+import MoviesList from 'components/MoviesList';
 
 const Movies = () => {
   const location = useLocation();
@@ -18,23 +19,15 @@ const Movies = () => {
       .catch(error => console.log('Error', error));
   }, [filter]);
 
-  const changeFilter = value => {
+  const submitFilter = value => {
     setSearchParams(value !== '' ? { filter: value } : {});
   };
 
   return (
     <main>
-      <SearchMovies onChange={changeFilter} value={filter} />
+      <SearchMovies onSubmit={submitFilter} />
       {movies.length > 0 && filter !== '' ? (
-        <ul>
-          {movies.map(({ id, title }) => (
-            <li key={id}>
-              <Link to={`${id}`} state={{ from: location }}>
-                {title}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <MoviesList movies={movies} location={location} />
       ) : null}
     </main>
   );

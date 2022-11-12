@@ -7,24 +7,24 @@ export const Container = styled.div`
   padding: 0 16px;
 `;
 
-export const Header = styled.header`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 8px 0;
-  margin-bottom: 16px;
-  border-bottom: 1px solid black;
-
-  > nav {
-    display: flex;
-  }
-`;
-
-export const Link = styled(NavLink)`
+export const MovieLink = styled(NavLink)`
   color: #2a2a2a;
+
+  text-decoration: none;
 
   &.active {
     color: red;
   }
+
+  &:hover {
+    color: red;
+  }
 `;
+
+export const List = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+`;
+
+export const Item = styled.li``;
