@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/535.39bfca5c.chunk.css","mappings":"AAAA,SAIE,sBACA,kBAHA,WADA,WAIA","sources":["pages/MovieDetails/MovieDetails.scss"],"sourcesContent":[".go-back {\n  padding: 3px;\n  margin: 7px;\n\n  border: 1px solid black;\n  border-radius: 5px;\n}\n"],"names":[],"sourceRoot":""}
