@@ -1,7 +1,14 @@
 .go-back {
-  padding: 3px;
+  display: block;
+  padding: 3px 5px;
   margin: 7px;
+  max-width: 70px;
 
   border: 1px solid black;
   border-radius: 5px;
+
+  &:hover {
+    color: white;
+    background-color: red;
+  }
 }
